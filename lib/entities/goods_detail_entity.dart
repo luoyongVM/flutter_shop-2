@@ -1,18 +1,18 @@
-class GoodsDetailModel {
+class GoodsDetailEntity {
   String code;
   String message;
   GoodsDetailInfo data;
 
-  static GoodsDetailModel fromMap(Map<String, dynamic> map) {
-    GoodsDetailModel model = new GoodsDetailModel();
+  static GoodsDetailEntity fromMap(Map<String, dynamic> map) {
+    GoodsDetailEntity model = new GoodsDetailEntity();
     model.code = map['code'];
     model.message = map['message'];
     model.data = GoodsDetailInfo.fromMap(map['data']);
     return model;
   }
 
-  static List<GoodsDetailModel> fromMapList(dynamic mapList) {
-    List<GoodsDetailModel> list = new List(mapList.length);
+  static List<GoodsDetailEntity> fromMapList(dynamic mapList) {
+    List<GoodsDetailEntity> list = new List(mapList.length);
     for (int i = 0; i < mapList.length; i++) {
       list[i] = fromMap(mapList[i]);
     }
@@ -43,7 +43,10 @@ class GoodsDetailInfo {
 }
 
 class AdvertesPictureBean {
+  // ignore: non_constant_identifier_names
   String PICTURE_ADDRESS;
+
+  // ignore: non_constant_identifier_names
   String TO_PLACE;
 
   static AdvertesPictureBean fromMap(Map<String, dynamic> map) {
@@ -113,6 +116,8 @@ class GoodInfoBean {
 class GoodCommentsListBean {
   String comments;
   String userName;
+
+  // ignore: non_constant_identifier_names
   int SCORE;
   int discussTime;
 

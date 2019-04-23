@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../entities/category.dart';
+import 'package:flutter_shop/entities/category_entity.dart';
 
 class SubCategoryProvide with ChangeNotifier {
   // 商品列表
@@ -23,7 +22,8 @@ class SubCategoryProvide with ChangeNotifier {
 
   int get subIndex => _subIndex;
 
-  void changeBxCategories(List<BxMallSubDtoListBean> categories) {
+  // 修改左侧栏
+  void changeLeftHeadCategories(List<BxMallSubDtoListBean> categories) {
     BxMallSubDtoListBean allSubDto = BxMallSubDtoListBean()
       ..mallCategoryId = ''
       ..mallSubId = null
@@ -39,16 +39,19 @@ class SubCategoryProvide with ChangeNotifier {
     notifyListeners();
   }
 
+  // 修改大类
   void changeCategory(String categoryId) {
     _categoryId = categoryId;
     notifyListeners();
   }
 
+  // 修改小类
   void changeSubCategorySelect(String subCategoryId) {
     _subCategoryId = subCategoryId;
     notifyListeners();
   }
 
+  // 小类 index
   void changeSubCategoryIndex(int index) {
     _subIndex = index;
     notifyListeners();
